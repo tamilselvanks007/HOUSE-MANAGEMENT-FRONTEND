@@ -1,0 +1,53 @@
+.App {
+  font-family: Roboto;
+}
+
+.welcome {
+  align-items: center;
+}
+
+.user-pic {
+  height: 150px;
+  width: 150px;
+  margin-left: 15px;
+  margin-top: 15px;
+  object-fit: cover;
+  border-radius: 5%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.tenant-container {
+  width: 600px;
+}
+
+.tenant-container:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.tenant-list {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.add-tenant-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px;
+}
+
+.tenant-details span {
+  font-weight: 400;
+}
+
+.not-found {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  max-width: 100%;
+  height: auto;
+}
