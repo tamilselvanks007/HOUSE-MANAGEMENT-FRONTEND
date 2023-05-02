@@ -2,10 +2,6 @@
   font-family: Roboto;
 }
 
-.welcome {
-  align-items: center;
-}
-
 .user-pic {
   height: 150px;
   width: 150px;
@@ -18,6 +14,8 @@
 
 .tenant-container {
   width: 600px;
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 
 .tenant-container:hover {
@@ -36,8 +34,8 @@
 .add-tenant-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin: 16px;
+  gap: 15px;
+  margin: 50px;
 }
 
 .tenant-details span {
@@ -51,3 +49,34 @@
   max-width: 100%;
   height: auto;
 }
+
+.title {
+  display: flex;
+  justify-content: center;
+  font-family: Roboto;
+  font-size: 2em;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+Link,
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.msg-container {
+  background: url("https://img.freepik.com/free-vector/outdoor-nature-related_24908-58946.jpg?w=1380&t=st=1682957865~exp=1682958465~hmac=16e7dd23dde81ebd467bcd0aa06f893b26362b792da04d5ebcb128129b22881a") no-repeat center;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+}
+
+
