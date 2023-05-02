@@ -1,10 +1,8 @@
-import Typography from '@mui/material/Typography';
-
 export function WelcomeMsg() {
   return (
     <div className="msg-container">
       <div className="welcome-msg">
-        <Typography variant="h2">HOUSE FOR RENT</Typography>
+        <h1 variant="h2">HOUSE FOR RENT !</h1>
       </div>
     </div>
   );

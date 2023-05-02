@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import { WelcomeMsg } from "./WelcomeMsg";
 import { NotFound } from "./NotFound";
 import { TenantList } from "./TenantList";
@@ -19,7 +19,7 @@ function App() {
   const history = useHistory();
   return (
     <div className="App">
-      <AppBar position="static" color="error">
+      <AppBar position="static" color="inherit">
         <Toolbar>
           <HouseIcon
             sx={{ display: { xs: "none", md: "flex", color: "black" }, mr: 1 }}
