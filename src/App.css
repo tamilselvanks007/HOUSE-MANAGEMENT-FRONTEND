@@ -1,5 +1,6 @@
 .App {
   font-family: Roboto;
+  margin-left: 0;
 }
 
 .user-pic {
@@ -15,12 +16,21 @@
 .tenant-container {
   width: 600px;
   margin-top: 40px;
-  margin-bottom: 30px;
+  height: min-content;
 }
 
 .tenant-info {
   display: flex;
   justify-content: center;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("https://images.pexels.com/photos/8306413/pexels-photo-8306413.jpeg")
+      no-repeat center;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
 }
 
 .tenant-container:hover {
@@ -34,17 +44,65 @@
   gap: 60px;
   flex-wrap: wrap;
   justify-content: space-around;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("https://images.pexels.com/photos/1738996/pexels-photo-1738996.jpeg")
+      no-repeat center;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 50px;
+  background-size: cover;
 }
 
 .add-tenant-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin: 50px;
+  padding: 50px;
+  width: 50%;
 }
 
+.add-tenant-container {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("https://images.pexels.com/photos/5961001/pexels-photo-5961001.jpeg")
+      no-repeat center;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .tenant-details span {
   font-weight: 400;
+}
+
+.edit-tenant-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 50px;
+  width: 50%;
+}
+
+.edit-tenant-container {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("https://images.pexels.com/photos/5961003/pexels-photo-5961003.jpeg")
+      no-repeat center;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .not-found {
@@ -94,4 +152,12 @@ a {
   display: flex;
   justify-content: center;
   padding-top: 250px;
+}
+
+.back-btn {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  margin-left: 15px;
 }

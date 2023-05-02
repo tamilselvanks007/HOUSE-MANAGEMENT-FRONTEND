@@ -3,26 +3,34 @@ import { useHistory } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { API } from "./global";
 import { useEffect, useState } from "react";
-
 
 export function TenantList() {
   const history = useHistory();
   const [tenantList, setTenantList] = useState([]);
 
-  useEffect(() => {
-    fetch("https://61f66eeb2e1d7e0017fd6da5.mockapi.io/movies", {
+  const getTenants = () => {
+    fetch(`${API}/movies`, {
       method: "GET",
     })
       .then((data) => data.json())
       .then((tns) => setTenantList(tns));
-  }, []);
+  };
+
+  useEffect(() => getTenants(), []);
+
+  const deleteTenant = (id) => {
+    fetch(`${API}/tenants/${id}`, {
+      method: "DELETE",
+    }).then(() => getTenants());
+  };
 
   return (
     <div className="tenant-list">
       {tenantList.map(
         (
-          { house, name, age, photo, mobile, aadhar, occupation, location },
+          { house, name, age, photo, mobile, aadhar, occupation, location, id },
           index
         ) => (
           <Tenant
@@ -40,7 +48,7 @@ export function TenantList() {
                 aria-label="delete"
                 color="secondary"
                 onClick={() => {
-                  history.push(`/tenants/edit/${index}`);
+                  history.push(`/tenants/edit/${id}`);
                 }}
               >
                 <EditIcon />
@@ -50,16 +58,12 @@ export function TenantList() {
               <IconButton
                 aria-label="delete"
                 color="error"
-                onClick={() => {
-                  const copyTenantList = [...tenantList];
-                  copyTenantList.splice(index, 1);
-                  setTenantList(copyTenantList);
-                }}
+                onClick={() => deleteTenant(id)}
               >
                 <DeleteIcon />
               </IconButton>
             }
-            id={index}
+            id={id}
           />
         )
       )}

@@ -1,11 +1,26 @@
 import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
-import { CardContent, CardMedia } from "@mui/material";
+import { API } from "./global";
+import { Button, CardContent, CardMedia } from "@mui/material";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
-export function TenantDetails({ tenantList }) {
-  const { id } = useParams();
-  const tenant = tenantList[id]; //get tenant details by id
+export function TenantDetails() {
+  const { id } = useParams(); // extracting parameter from the url
+  const [tenant, setTenant] = useState({});
+
+  useEffect(() => {
+    fetch(`${API}/movies/${id}`, {
+      method: "GET",
+    })
+      .then((data) => data.json())
+      .then((tns) => setTenant(tns))
+      .catch((err) => console.log(err));
+  }, []);
+
+  const history = useHistory();
   return (
     <div className="tenant-info">
       <Card className="tenant-container">
@@ -56,6 +71,15 @@ export function TenantDetails({ tenantList }) {
             </div>
           </div>
         </CardContent>
+        <div className="back-btn">
+          <Button
+            variant="contained"
+            onClick={() => history.goBack()}
+            startIcon={<ArrowBackIosIcon />}
+          >
+            Back
+          </Button>
+        </div>
       </Card>
     </div>
   );

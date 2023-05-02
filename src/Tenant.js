@@ -55,11 +55,11 @@ export function Tenant({
           <div>
             <div className="tenant-details">
               <h2 className="house-number">
-                House No:
+                House No:{" "}
                 <span style={{ color: "blue", fontWeight: 600 }}>{house}</span>
               </h2>
               <Grid
-                container
+                container 
                 rowSpacing={1}
                 columnSpacing={{ xs: 1, sm: 2, md: 3 }}
               >

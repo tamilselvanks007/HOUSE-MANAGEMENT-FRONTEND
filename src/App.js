@@ -4,7 +4,6 @@ import { Switch, Route } from "react-router-dom";
 import { WelcomeMsg } from "./WelcomeMsg";
 import { NotFound } from "./NotFound";
 import { TenantList } from "./TenantList";
-import { INITIAL_TENANT_LIST } from "./INITIAL_TENANT_LIST";
 import { AddTenant } from "./AddTenant";
 import { EditTenant } from "./EditTenant";
 import AppBar from "@mui/material/AppBar";
@@ -16,14 +15,13 @@ import HouseIcon from "@mui/icons-material/House";
 import { TenantDetails } from "./TenantDetails";
 
 function App() {
-  const [tenantList, setTenantList] = useState(INITIAL_TENANT_LIST);
   const history = useHistory();
   return (
     <div className="App">
       <AppBar position="static" color="inherit">
         <Toolbar>
           <HouseIcon
-            sx={{ display: { xs: "none", md: "flex", color: "black" }, mr: 1 }}
+            sx={{ display: { xs: "none", md: "flex", color: "crimson" } }}
           />
           <Typography
             variant="h6"
@@ -64,13 +62,13 @@ function App() {
           <WelcomeMsg />
         </Route>
         <Route path="/tenants/edit/:id">
-          <EditTenant tenantList={tenantList} setTenantList={setTenantList} />
+          <EditTenant />
         </Route>
         <Route path="/tenants/add">
-          <AddTenant tenantList={tenantList} setTenantList={setTenantList} />
+          <AddTenant />
         </Route>
         <Route path="/tenants/:id">
-          <TenantDetails tenantList={tenantList} />
+          <TenantDetails />
         </Route>
         <Route path="/tenants">
           <TenantList />
