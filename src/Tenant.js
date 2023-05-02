@@ -1,12 +1,14 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { CardContent, CardMedia, IconButton } from "@mui/material";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import InfoIcon from "@mui/icons-material/Info";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 
 export function Tenant({
-  number,
+  house,
   name,
   age,
   photo,
@@ -16,8 +18,10 @@ export function Tenant({
   location,
   editButton,
   deleteButton,
+  id,
 }) {
   const [show, setShow] = useState(true);
+  const history = useHistory();
 
   return (
     <Card className="tenant-container">
@@ -33,9 +37,17 @@ export function Tenant({
           color="primary"
           onClick={() => setShow(!show)}
           aria-label="toggle details"
-          sx={{ marginRight: 55 }}
+          sx={{ marginRight: 50 }}
         >
           {show ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        </IconButton>{" "}
+        <IconButton
+          color="primary"
+          onClick={() => history.push(`/tenants/${id}`)}
+          aria-label="toggle details"
+          sx={{ marginLeft: -50, marginRight: 49 }}
+        >
+          <InfoIcon />
         </IconButton>{" "}
         {editButton} {deleteButton}
         {/* conditional rendering */}
@@ -43,8 +55,8 @@ export function Tenant({
           <div>
             <div className="tenant-details">
               <h2 className="house-number">
-                House No:{" "}
-                <span style={{ color: "blue", fontWeight: 600 }}>{number}</span>
+                House No:
+                <span style={{ color: "blue", fontWeight: 600 }}>{house}</span>
               </h2>
               <Grid
                 container

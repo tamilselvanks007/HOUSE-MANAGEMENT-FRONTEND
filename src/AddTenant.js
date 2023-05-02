@@ -4,7 +4,7 @@ import { TextField } from "@mui/material";
 import { useHistory } from "react-router-dom";
 
 export function AddTenant({ tenantList, setTenantList }) {
-  const [number, setNumber] = useState("");
+  const [house, sethouse] = useState("");
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [photo, setPhoto] = useState("");
@@ -19,7 +19,7 @@ export function AddTenant({ tenantList, setTenantList }) {
       <TextField
         variant="outlined"
         label="House No"
-        onChange={(event) => setNumber(event.target.value)}
+        onChange={(event) => sethouse(event.target.value)}
       />
       <TextField
         variant="outlined"
@@ -61,7 +61,7 @@ export function AddTenant({ tenantList, setTenantList }) {
         variant="contained"
         onClick={() => {
           const newTenant = {
-            number: number,
+            house: house,
             name: name,
             age: age,
             photo: photo,

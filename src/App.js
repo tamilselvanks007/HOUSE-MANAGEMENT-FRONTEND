@@ -13,6 +13,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useHistory } from "react-router-dom";
 import HouseIcon from "@mui/icons-material/House";
+import { TenantDetails } from "./TenantDetails";
 
 function App() {
   const [tenantList, setTenantList] = useState(INITIAL_TENANT_LIST);
@@ -68,8 +69,11 @@ function App() {
         <Route path="/tenants/add">
           <AddTenant tenantList={tenantList} setTenantList={setTenantList} />
         </Route>
+        <Route path="/tenants/:id">
+          <TenantDetails tenantList={tenantList} />
+        </Route>
         <Route path="/tenants">
-          <TenantList tenantList={tenantList} setTenantList={setTenantList} />
+          <TenantList />
         </Route>
         <Route path="**">
           <NotFound />

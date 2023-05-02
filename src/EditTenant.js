@@ -8,7 +8,7 @@ export function EditTenant({ tenantList, setTenantList }) {
   const tenant = tenantList[id];
   console.log(tenant);
 
-  const [number, setNumber] = useState(tenant.number);
+  const [house, sethouse] = useState(tenant.house);
   const [name, setName] = useState(tenant.name);
   const [age, setAge] = useState(tenant.age);
   const [photo, setPhoto] = useState(tenant.photo);
@@ -22,10 +22,10 @@ export function EditTenant({ tenantList, setTenantList }) {
   return (
     <div className="add-tenant-form">
       <TextField
-        value={number}
+        value={house}
         variant="outlined"
         label="House No"
-        onChange={(event) => setNumber(event.target.value)}
+        onChange={(event) => sethouse(event.target.value)}
       />
       <TextField
         value={name}
@@ -75,7 +75,7 @@ export function EditTenant({ tenantList, setTenantList }) {
         color="success"
         onClick={() => {
           const updatedTenant = {
-            number: number,
+            house: house,
             name: name,
             age: age,
             photo: photo,

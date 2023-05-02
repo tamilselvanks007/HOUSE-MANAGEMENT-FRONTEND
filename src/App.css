@@ -18,6 +18,11 @@
   margin-bottom: 30px;
 }
 
+.tenant-info {
+  display: flex;
+  justify-content: center;
+}
+
 .tenant-container:hover {
   cursor: pointer;
   transform: scale(1.03);
