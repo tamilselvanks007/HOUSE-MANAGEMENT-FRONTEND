@@ -12,13 +12,13 @@ export function TenantDetails() {
   const [tenant, setTenant] = useState({});
 
   useEffect(() => {
-    fetch(`${API}/movies/${id}`, {
+    fetch(`${API}/tenants/${id}`, {
       method: "GET",
     })
       .then((data) => data.json())
       .then((tns) => setTenant(tns))
       .catch((err) => console.log(err));
-  }, []);
+  }, [id]);
 
   const history = useHistory();
   return (
@@ -34,10 +34,10 @@ export function TenantDetails() {
         <CardContent>
           <div>
             <div className="tenant-details">
-              <h2 className="house-number">
-                House No:
+              <h2 className="houseNo-number">
+                houseNo No:
                 <span style={{ color: "blue", fontWeight: 600 }}>
-                  {tenant.house}
+                  {tenant.houseNo}
                 </span>
               </h2>
               <Grid
@@ -57,8 +57,8 @@ export function TenantDetails() {
                   </h3>
                 </Grid>
                 <Grid item xs={6}>
-                  <h3 className="tenant-aadhar">
-                    Aadhar: <span>{tenant.aadhar}</span>
+                  <h3 className="tenant-aadharNo">
+                    aadharNo: <span>{tenant.aadharNo}</span>
                   </h3>
                   <h3 className="tenant-occupation">
                     Occupation: <span>{tenant.occupation}</span>

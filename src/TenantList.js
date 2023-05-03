@@ -11,7 +11,7 @@ export function TenantList() {
   const [tenantList, setTenantList] = useState([]);
 
   const getTenants = () => {
-    fetch(`${API}/movies`, {
+    fetch(`${API}/tenants`, {
       method: "GET",
     })
       .then((data) => data.json())
@@ -30,17 +30,27 @@ export function TenantList() {
     <div className="tenant-list">
       {tenantList.map(
         (
-          { house, name, age, photo, mobile, aadhar, occupation, location, id },
+          {
+            houseNo,
+            name,
+            age,
+            photo,
+            mobile,
+            aadharNo,
+            occupation,
+            location,
+            id,
+          },
           index
         ) => (
           <Tenant
             key={index}
-            house={house}
+            houseNo={houseNo}
             name={name}
             age={age}
             photo={photo}
             mobile={mobile}
-            aadhar={aadhar}
+            aadharNo={aadharNo}
             occupation={occupation}
             location={location}
             editButton={

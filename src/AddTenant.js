@@ -1,32 +1,43 @@
-import { useState } from "react";
 import Button from "@mui/material/Button";
-import { Card, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import { useHistory } from "react-router-dom";
 import { API } from "./global";
+import { useFormik } from "formik";
+import * as yup from "yup";
+
+export const tenantValidationSchema = yup.object({
+  houseNo: yup.number().required("Why don't you fill out this field?"),
+  name: yup.string().required("Why don't you fill out this field?"),
+  age: yup.number().required("Why don't you fill out this field?"),
+  photo: yup.string().required("Why don't you fill out this field?"),
+  mobile: yup.number().required("Why don't you fill out this field?"),
+  aadharNo: yup.string().required("Why don't you fill out this field?"),
+  occupation: yup.string().required("Why don't you fill out this field?"),
+  location: yup.string().required("Why don't you fill out this field?"),
+});
 
 export function AddTenant() {
-  const [house, sethouse] = useState("");
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
-  const [photo, setPhoto] = useState("");
-  const [mobile, setMobile] = useState("");
-  const [aadhar, setAadhar] = useState("");
-  const [occupation, setOccupation] = useState("");
-  const [location, setLocation] = useState("");
-
   const history = useHistory();
 
-  const addTenant = () => {
-    const newTenant = {
-      house: house,
-      name: name,
-      age: age,
-      photo: photo,
-      mobile: mobile,
-      aadhar: aadhar,
-      occupation: occupation,
-      location: location,
-    };
+  const formik = useFormik({
+    initialValues: {
+      houseNo: "",
+      name: "",
+      age: "",
+      photo: "",
+      mobile: "",
+      aadharNo: "",
+      occupation: "",
+      location: "",
+    },
+
+    validationSchema: tenantValidationSchema,
+    onSubmit: (newTenant) => {
+      addTenant(newTenant);
+    },
+  });
+
+  const addTenant = (newTenant) => {
     fetch(`${API}/tenants/`, {
       method: "POST",
       body: JSON.stringify(newTenant),
@@ -37,53 +48,134 @@ export function AddTenant() {
   };
 
   return (
-    <div className="add-tenant-container">
-      <Card className="add-tenant-form">
+    <div className="add-container">
+      <form onSubmit={formik.handleSubmit} className="add-tenant-form">
         <TextField
           variant="outlined"
           label="House No"
-          onChange={(event) => sethouse(event.target.value)}
+          id="houseNo"
+          name="houseNo"
+          value={formik.values.houseNo}
+          onBlur={formik.handleBlur}
+          onChange={formik.handleChange}
+          error={formik.touched.houseNo && formik.errors.houseNo}
+          helperText={
+            formik.touched.houseNo && formik.errors.houseNo
+              ? formik.errors.houseNo
+              : ""
+          }
         />
         <TextField
           variant="outlined"
           label="Name"
-          onChange={(event) => setName(event.target.value)}
+          id="name"
+          name="name"
+          value={formik.values.name}
+          onBlur={formik.handleBlur}
+          onChange={formik.handleChange}
+          error={formik.touched.name && formik.errors.name}
+          helperText={
+            formik.touched.name && formik.errors.name ? formik.errors.name : ""
+          }
         />
         <TextField
           variant="outlined"
           label="Age"
-          onChange={(event) => setAge(event.target.value)}
+          id="age"
+          name="age"
+          value={formik.values.age}
+          onBlur={formik.handleBlur}
+          onChange={formik.handleChange}
+          error={formik.touched.age && formik.errors.age}
+          helperText={
+            formik.touched.age && formik.errors.age ? formik.errors.age : ""
+          }
         />
+
         <TextField
           variant="outlined"
           label="Photo"
-          onChange={(event) => setPhoto(event.target.value)}
+          id="photo"
+          name="photo"
+          value={formik.values.photo}
+          onBlur={formik.handleBlur}
+          onChange={formik.handleChange}
+          error={formik.touched.photo && formik.errors.photo}
+          helperText={
+            formik.touched.photo && formik.errors.photo
+              ? formik.errors.photo
+              : ""
+          }
         />
+
         <TextField
           variant="outlined"
           label="Mobile"
-          onChange={(event) => setMobile(event.target.value)}
+          id="mobile"
+          name="mobile"
+          value={formik.values.mobile}
+          onBlur={formik.handleBlur}
+          onChange={formik.handleChange}
+          error={formik.touched.mobile && formik.errors.mobile}
+          helperText={
+            formik.touched.mobile && formik.errors.mobile
+              ? formik.errors.mobile
+              : ""
+          }
         />
+
         <TextField
           variant="outlined"
-          label="Aadhar"
-          onChange={(event) => setAadhar(event.target.value)}
+          label="aadharNo"
+          id="aadharNo"
+          name="aadharNo"
+          value={formik.values.aadharNo}
+          onBlur={formik.handleBlur}
+          onChange={formik.handleChange}
+          error={formik.touched.aadharNo && formik.errors.aadharNo}
+          helperText={
+            formik.touched.aadharNo && formik.errors.aadharNo
+              ? formik.errors.aadharNo
+              : ""
+          }
         />
+
         <TextField
           variant="outlined"
           label="Occupation"
-          onChange={(event) => setOccupation(event.target.value)}
+          id="occupation"
+          name="occupation"
+          value={formik.values.occupation}
+          onBlur={formik.handleBlur}
+          onChange={formik.handleChange}
+          error={formik.touched.occupation && formik.errors.occupation}
+          helperText={
+            formik.touched.occupation && formik.errors.occupation
+              ? formik.errors.occupation
+              : ""
+          }
         />
+
         <TextField
           variant="outlined"
           label="Location"
-          onChange={(event) => setLocation(event.target.value)}
+          id="location"
+          name="location"
+          value={formik.values.location}
+          onBlur={formik.handleBlur}
+          onChange={formik.handleChange}
+          error={formik.touched.location && formik.errors.location}
+          helperText={
+            formik.touched.location && formik.errors.location
+              ? formik.errors.location
+              : ""
+          }
         />
-        {/* copy of the movies list and new movie ti it */}
-        <Button variant="contained" onClick={() => addTenant()}>
+
+        <Button type="submit" variant="contained">
           Add Tenant
         </Button>
-      </Card>
+      </form>
     </div>
   );
 }

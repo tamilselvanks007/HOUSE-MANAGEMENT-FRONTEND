@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import { WelcomeMsg } from "./WelcomeMsg";

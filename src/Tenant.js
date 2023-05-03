@@ -8,12 +8,12 @@ import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 
 export function Tenant({
-  house,
+  houseNo,
   name,
   age,
   photo,
   mobile,
-  aadhar,
+  aadharNo,
   occupation,
   location,
   editButton,
@@ -54,9 +54,9 @@ export function Tenant({
         {show ? (
           <div>
             <div className="tenant-details">
-              <h2 className="house-number">
-                House No:{" "}
-                <span style={{ color: "blue", fontWeight: 600 }}>{house}</span>
+              <h2 className="houseNo-number">
+                houseNo No:{" "}
+                <span style={{ color: "blue", fontWeight: 600 }}>{houseNo}</span>
               </h2>
               <Grid
                 container 
@@ -75,8 +75,8 @@ export function Tenant({
                   </h3>
                 </Grid>
                 <Grid item xs={6}>
-                  <h3 className="tenant-aadhar">
-                    Aadhar: <span>{aadhar}</span>
+                  <h3 className="tenant-aadharNo">
+                    aadharNo: <span>{aadharNo}</span>
                   </h3>
                   <h3 className="tenant-occupation">
                     Occupation: <span>{occupation}</span>

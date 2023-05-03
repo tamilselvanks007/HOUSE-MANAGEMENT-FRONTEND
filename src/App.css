@@ -56,6 +56,12 @@
   background-size: cover;
 }
 
+.add-container {
+  display: flex;
+  justify-content: center;
+  /* background: url(); */
+}
+
 .add-tenant-form {
   display: flex;
   flex-direction: column;
@@ -64,22 +70,14 @@
   width: 50%;
 }
 
-.add-tenant-container {
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url("https://images.pexels.com/photos/5961001/pexels-photo-5961001.jpeg")
-      no-repeat center;
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .tenant-details span {
   font-weight: 400;
+}
+
+.edit-container {
+  display: flex;
+  justify-content: center;
+  /* background: url(""); */
 }
 
 .edit-tenant-form {
@@ -88,21 +86,6 @@
   gap: 15px;
   padding: 50px;
   width: 50%;
-}
-
-.edit-tenant-container {
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url("https://images.pexels.com/photos/5961003/pexels-photo-5961003.jpeg")
-      no-repeat center;
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .not-found {
