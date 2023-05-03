@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
-import { API } from "./global";
+import { API } from "../global";
 import { Button, CardContent, CardMedia } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 

@@ -1,7 +1,7 @@
 import Button from "@mui/material/Button";
 import { TextField } from "@mui/material";
 import { useHistory } from "react-router-dom";
-import { API } from "./global";
+import { API } from "../global";
 import { useFormik } from "formik";
 import * as yup from "yup";
 

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { API } from "./global";
+import { API } from "../global";
 import { useEffect, useState } from "react";
 
 export function TenantList() {

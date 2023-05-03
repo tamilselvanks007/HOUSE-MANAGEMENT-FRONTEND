@@ -1,17 +1,17 @@
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
-import { WelcomeMsg } from "./WelcomeMsg";
-import { NotFound } from "./NotFound";
-import { TenantList } from "./TenantList";
-import { AddTenant } from "./AddTenant";
-import { EditTenant } from "./EditTenant";
+import { WelcomeMsg } from "./components/WelcomeMsg";
+import { NotFound } from "./components/NotFound";
+import { TenantList } from "./components/TenantList";
+import { AddTenant } from "./components/AddTenant";
+import { EditTenant } from "./components/EditTenant";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useHistory } from "react-router-dom";
 import HouseIcon from "@mui/icons-material/House";
-import { TenantDetails } from "./TenantDetails";
+import { TenantDetails } from "./components/TenantDetails";
 
 function App() {
   const history = useHistory();

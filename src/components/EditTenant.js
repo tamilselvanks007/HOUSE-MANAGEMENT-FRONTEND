@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 import { TextField } from "@mui/material";
-import { API } from "./global";
+import { API } from "../global";
 import { useHistory, useParams } from "react-router-dom";
 import { useFormik } from "formik";
 import { tenantValidationSchema } from "./AddTenant";
