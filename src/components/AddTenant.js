@@ -40,7 +40,6 @@ export function AddTenant() {
   const addTenant = (newTenant) => {
     fetch(`${API}/tenants/`, {
       method: "POST",
-      mode: "cors",
       body: JSON.stringify(newTenant),
       headers: {
         "Content-Type": "application/json",
