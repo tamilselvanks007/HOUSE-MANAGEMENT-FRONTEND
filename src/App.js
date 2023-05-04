@@ -17,10 +17,10 @@ function App() {
   const history = useHistory();
   return (
     <div className="App">
-      <AppBar position="static" color="inherit">
+      <AppBar position="static" sx={{backgroundColor:"orange"}}>
         <Toolbar>
           <HouseIcon
-            sx={{ display: { xs: "none", md: "flex", color: "crimson" } }}
+            sx={{ display: { xs: "none", md: "flex", color: "white" } }}
           />
           <Typography
             variant="h6"
