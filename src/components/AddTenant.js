@@ -48,7 +48,6 @@ export function AddTenant() {
   };
 
   return (
-    <div className="add-container">
       <form onSubmit={formik.handleSubmit} className="add-tenant-form">
         <TextField
           variant="outlined"
@@ -176,6 +175,5 @@ export function AddTenant() {
           Add Tenant
         </Button>
       </form>
-    </div>
   );
 }

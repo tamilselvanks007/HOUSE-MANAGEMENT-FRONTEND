@@ -58,7 +58,6 @@ function EditTenantForm({ tenant }) {
   };
 
   return (
-    <div className="edit-container">
       <form onSubmit={formik.handleSubmit} className="edit-tenant-form">
         <TextField
           variant="outlined"
@@ -186,6 +185,5 @@ function EditTenantForm({ tenant }) {
           Save
         </Button>
       </form>
-    </div>
   );
 }

@@ -48,26 +48,17 @@
   background-size: cover;
 }
 
-.add-container {
-  display: flex;
-  justify-content: center;
-}
-
 .add-tenant-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
   padding: 50px;
   width: 50%;
+  margin: auto;
 }
 
 .tenant-details span {
   font-weight: 400;
-}
-
-.edit-container {
-  display: flex;
-  justify-content: center;
 }
 
 .edit-tenant-form {
@@ -76,6 +67,7 @@
   gap: 15px;
   padding: 50px;
   width: 50%;
+  margin: auto;
 }
 
 .not-found {
