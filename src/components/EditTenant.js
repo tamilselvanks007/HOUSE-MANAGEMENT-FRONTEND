@@ -22,7 +22,19 @@ export function EditTenant() {
 
   return (
     <div>
-      {tenant ? <EditTenantForm tenant={tenant} /> : <h2>Loading...</h2>}
+      {tenant ? (
+        <EditTenantForm tenant={tenant} />
+      ) : (
+        <h2
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: 300,
+          }}
+        >
+          Loading...
+        </h2>
+      )}
     </div>
   );
 }
