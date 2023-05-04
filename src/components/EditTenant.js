@@ -6,7 +6,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { useFormik } from "formik";
 import { tenantValidationSchema } from "./AddTenant";
 
-export function EditTenant({ tenantList, setTenantList }) {
+export function EditTenant() {
   const { id } = useParams();
 
   const [tenant, setTenant] = useState();
