@@ -58,132 +58,130 @@ function EditTenantForm({ tenant }) {
   };
 
   return (
-      <form onSubmit={formik.handleSubmit} className="edit-tenant-form">
-        <TextField
-          variant="outlined"
-          label="House No"
-          id="houseNo"
-          name="houseNo"
-          value={formik.values.houseNo}
-          onBlur={formik.handleBlur}
-          onChange={formik.handleChange}
-          error={formik.touched.houseNo && formik.errors.houseNo}
-          helperText={
-            formik.touched.houseNo && formik.errors.houseNo
-              ? formik.errors.houseNo
-              : ""
-          }
-        />
-        <TextField
-          variant="outlined"
-          label="Name"
-          id="name"
-          name="name"
-          value={formik.values.name}
-          onBlur={formik.handleBlur}
-          onChange={formik.handleChange}
-          error={formik.touched.name && formik.errors.name}
-          helperText={
-            formik.touched.name && formik.errors.name ? formik.errors.name : ""
-          }
-        />
-        <TextField
-          variant="outlined"
-          label="Age"
-          id="age"
-          name="age"
-          value={formik.values.age}
-          onBlur={formik.handleBlur}
-          onChange={formik.handleChange}
-          error={formik.touched.age && formik.errors.age}
-          helperText={
-            formik.touched.age && formik.errors.age ? formik.errors.age : ""
-          }
-        />
+    <form onSubmit={formik.handleSubmit} className="edit-tenant-form">
+      <TextField
+        variant="outlined"
+        label="House No"
+        id="houseNo"
+        name="houseNo"
+        value={formik.values.houseNo}
+        onBlur={formik.handleBlur}
+        onChange={formik.handleChange}
+        error={formik.touched.houseNo && formik.errors.houseNo}
+        helperText={
+          formik.touched.houseNo && formik.errors.houseNo
+            ? formik.errors.houseNo
+            : ""
+        }
+      />
+      <TextField
+        variant="outlined"
+        label="Name"
+        id="name"
+        name="name"
+        value={formik.values.name}
+        onBlur={formik.handleBlur}
+        onChange={formik.handleChange}
+        error={formik.touched.name && formik.errors.name}
+        helperText={
+          formik.touched.name && formik.errors.name ? formik.errors.name : ""
+        }
+      />
+      <TextField
+        variant="outlined"
+        label="Age"
+        id="age"
+        name="age"
+        value={formik.values.age}
+        onBlur={formik.handleBlur}
+        onChange={formik.handleChange}
+        error={formik.touched.age && formik.errors.age}
+        helperText={
+          formik.touched.age && formik.errors.age ? formik.errors.age : ""
+        }
+      />
 
-        <TextField
-          variant="outlined"
-          label="Photo"
-          id="photo"
-          name="photo"
-          value={formik.values.photo}
-          onBlur={formik.handleBlur}
-          onChange={formik.handleChange}
-          error={formik.touched.photo && formik.errors.photo}
-          helperText={
-            formik.touched.photo && formik.errors.photo
-              ? formik.errors.photo
-              : ""
-          }
-        />
+      <TextField
+        variant="outlined"
+        label="Photo"
+        id="photo"
+        name="photo"
+        value={formik.values.photo}
+        onBlur={formik.handleBlur}
+        onChange={formik.handleChange}
+        error={formik.touched.photo && formik.errors.photo}
+        helperText={
+          formik.touched.photo && formik.errors.photo ? formik.errors.photo : ""
+        }
+      />
 
-        <TextField
-          variant="outlined"
-          label="Mobile"
-          id="mobile"
-          name="mobile"
-          value={formik.values.mobile}
-          onBlur={formik.handleBlur}
-          onChange={formik.handleChange}
-          error={formik.touched.mobile && formik.errors.mobile}
-          helperText={
-            formik.touched.mobile && formik.errors.mobile
-              ? formik.errors.mobile
-              : ""
-          }
-        />
+      <TextField
+        variant="outlined"
+        label="Mobile"
+        id="mobile"
+        name="mobile"
+        value={formik.values.mobile}
+        onBlur={formik.handleBlur}
+        onChange={formik.handleChange}
+        error={formik.touched.mobile && formik.errors.mobile}
+        helperText={
+          formik.touched.mobile && formik.errors.mobile
+            ? formik.errors.mobile
+            : ""
+        }
+      />
 
-        <TextField
-          variant="outlined"
-          label="aadharNo"
-          id="aadharNo"
-          name="aadharNo"
-          value={formik.values.aadharNo}
-          onBlur={formik.handleBlur}
-          onChange={formik.handleChange}
-          error={formik.touched.aadharNo && formik.errors.aadharNo}
-          helperText={
-            formik.touched.aadharNo && formik.errors.aadharNo
-              ? formik.errors.aadharNo
-              : ""
-          }
-        />
+      <TextField
+        variant="outlined"
+        label="aadharNo"
+        id="aadharNo"
+        name="aadharNo"
+        value={formik.values.aadharNo}
+        onBlur={formik.handleBlur}
+        onChange={formik.handleChange}
+        error={formik.touched.aadharNo && formik.errors.aadharNo}
+        helperText={
+          formik.touched.aadharNo && formik.errors.aadharNo
+            ? formik.errors.aadharNo
+            : ""
+        }
+      />
 
-        <TextField
-          variant="outlined"
-          label="Occupation"
-          id="occupation"
-          name="occupation"
-          value={formik.values.occupation}
-          onBlur={formik.handleBlur}
-          onChange={formik.handleChange}
-          error={formik.touched.occupation && formik.errors.occupation}
-          helperText={
-            formik.touched.occupation && formik.errors.occupation
-              ? formik.errors.occupation
-              : ""
-          }
-        />
+      <TextField
+        variant="outlined"
+        label="Occupation"
+        id="occupation"
+        name="occupation"
+        value={formik.values.occupation}
+        onBlur={formik.handleBlur}
+        onChange={formik.handleChange}
+        error={formik.touched.occupation && formik.errors.occupation}
+        helperText={
+          formik.touched.occupation && formik.errors.occupation
+            ? formik.errors.occupation
+            : ""
+        }
+      />
 
-        <TextField
-          variant="outlined"
-          label="Location"
-          id="location"
-          name="location"
-          value={formik.values.location}
-          onBlur={formik.handleBlur}
-          onChange={formik.handleChange}
-          error={formik.touched.location && formik.errors.location}
-          helperText={
-            formik.touched.location && formik.errors.location
-              ? formik.errors.location
-              : ""
-          }
-        />
+      <TextField
+        variant="outlined"
+        label="Location"
+        id="location"
+        name="location"
+        value={formik.values.location}
+        onBlur={formik.handleBlur}
+        onChange={formik.handleChange}
+        error={formik.touched.location && formik.errors.location}
+        helperText={
+          formik.touched.location && formik.errors.location
+            ? formik.errors.location
+            : ""
+        }
+      />
 
-        <Button color="success" type="submit" variant="contained">
-          Save
-        </Button>
-      </form>
+      <Button color="success" type="submit" variant="contained">
+        Save
+      </Button>
+    </form>
   );
 }
